@@ -60,6 +60,18 @@ test('manual-code prompt: submitCode completes the flow', async () => {
   assert.equal(loginWatch(), undefined, 'session finished and removed')
 })
 
+test('browser auto-opens only when requested and only for the official origin', async () => {
+  const opened = []
+  const { auth } = makeAuth()
+  await startLogin(ctxWith(auth), { openBrowser: true, opener: u => opened.push(u) })
+  assert.equal(opened.length, 1)
+  assert.match(opened[0], /^https:\/\/auth\.openai\.com\//)
+  const { auth: auth2 } = makeAuth()
+  const opened2 = []
+  await startLogin(ctxWith(auth2), { opener: u => opened2.push(u) })
+  assert.equal(opened2.length, 0, 'default stays silent (no browser in tests)')
+})
+
 test('submitCode without a pending prompt returns false', () => {
   assert.equal(submitCode('whatever'), false)
 })
