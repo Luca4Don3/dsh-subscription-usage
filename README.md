@@ -26,6 +26,24 @@ Requires DSH >= 0.1.5-rc.1 and Node >= 18.
 
 ## Usage
 
+### Sign in with ChatGPT (native route)
+
+The official client offers no sign-in entry for pi-ai provider flows; this
+plugin provides it as the `/gpt-login` slash command (chat surface, requires
+the interactive command service):
+
+```text
+/gpt-login            # start sign-in, returns the authorization URL
+gpt-login status            # waiting / signed in / last error
+gpt-login code <value>  # paste-back when the local callback cannot finish
+gpt-login cancel           # abort an in-flight sign-in
+```
+
+Requires the native route `openai-codex` configured in the profile's
+`llm-pi-ai` providers (host-owned config; this plugin never registers LLM
+routes). Disposal aborts any in-flight sign-in. See
+[docs/native-codex-integration.md](docs/native-codex-integration.md).
+
 After install the plugin provides the `subscriptionUsage` service:
 
 ```js
