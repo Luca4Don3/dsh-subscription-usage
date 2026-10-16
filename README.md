@@ -44,6 +44,7 @@ Missing data is reported as `unknown` — never as 0%.
 | Item | Status |
 |---|---|
 | Codex OAuth compatibility (reuses Pi-AI) | PASS (P0 E2E) |
+| **Phase 1: native ChatGPT login + GPT call with no dsh-llm-openai-codex installed** | **PASS** (\`scripts/native-login-probe\`, evidence in docs/validation/native-login/) |
 | Codex quota endpoint /wham/usage | PASS (200, real account) |
 | OpenCode Go quota endpoint | PASS (200) |
 | Parsing rules pinned by regression suite | PASS (fixtures + tests) |

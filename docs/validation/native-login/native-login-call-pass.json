@@ -1,0 +1,24 @@
+{
+  "stage": "P1-NATIVE",
+  "action": "login-call",
+  "gates": {
+    "nativeLogin": "PASS",
+    "nativeModelCall": "PASS"
+  },
+  "evidence": {
+    "providerRoute": "native-llm-pi-ai",
+    "flowMethods": [
+      "oauth"
+    ],
+    "model": "gpt-6-sol",
+    "markerMatched": true,
+    "responseCharacters": 42,
+    "responseSha256": "45ece540c7243d15e33d4b56c1399ce861b12ca4cb007fbcb41a5c0675836db6",
+    "usageReceived": true,
+    "streamChunks": 30
+  },
+  "redaction": {
+    "tokenOmitted": true,
+    "markerBodyOmitted": true
+  }
+}
