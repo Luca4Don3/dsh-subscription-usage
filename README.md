@@ -26,7 +26,17 @@ Requires DSH >= 0.1.5-rc.1 and Node >= 18.
 
 ## Usage
 
-### Sign in with ChatGPT (native route)
+### Sign in with ChatGPT — Settings page (primary)
+
+After restart, **Settings → ChatGPT 登录** (standalone section between Models
+and Plugins) provides the button: **Sign in with ChatGPT** opens the host
+browser automatically, shows the live authorization URL, a paste box for the
+callback fallback, cancel, and signed-in state. The page talks to the
+plugin loopback API only while the host webServer exists.
+
+### Chat command (fallback)
+
+For sessions without the settings page:
 
 The official client offers no sign-in entry for pi-ai provider flows; this
 plugin provides it as the `/gpt-login` slash command (chat surface, requires

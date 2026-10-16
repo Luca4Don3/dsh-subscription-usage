@@ -7,6 +7,9 @@
   "main": "lib/index.js",
   "exports": {
     ".": "./lib/index.js",
+    "./client": {
+      "default": "./lib/client.js"
+    },
     "./package.json": "./package.json"
   },
   "files": [
@@ -29,19 +32,31 @@
     },
     "bundle": {
       "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-locale"
+      ],
+      "platform": "web"
     }
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "*",
     "@deepseek-ai/dsh-credentials": "*",
     "@deepseek-ai/schemastery": "*",
-    "@earendil-works/pi-ai": "*"
+    "@earendil-works/pi-ai": "*",
+    "react": "*"
   },
   "peerDependenciesMeta": {
     "@deepseek-ai/schemastery": {
       "optional": true
     },
     "@earendil-works/pi-ai": {
+      "optional": true
+    },
+    "react": {
       "optional": true
     }
   }
