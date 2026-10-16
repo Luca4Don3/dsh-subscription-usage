@@ -1,0 +1,8 @@
+- insert:
+    - id: native-login-probe
+      name: dsh-native-login-probe
+      config:
+        runDir: PLACEHOLDER
+        modelId: gpt-6-sol
+        timeoutMs: 600000
+        requestTimeoutMs: 120000
